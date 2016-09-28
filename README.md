@@ -5,3 +5,6 @@
 
 已开发：
 1.选择小区界面demo （列表渲染、列表点击事件）
+
+![image](https://github.com/forrest23/WoJu/raw/master/screenshots/selectCommunity.png)
+
