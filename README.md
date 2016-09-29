@@ -15,5 +15,5 @@
 1.6  网络请求API wx.request</br>
 1.7  本地存储 wx.setStorage</br>
 
-![image](http://image18-c.poco.cn/mypoco/myphoto/20160929/15/18343359920160929152717072.gif?480x863_110)
+![image](https://github.com/forrest23/WoJu/blob/master/screenshots/app.gif)
 
