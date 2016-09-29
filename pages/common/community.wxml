@@ -1,0 +1,21 @@
+<!-- 小区列表组件 -->
+<template name="community-list">
+  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+    <template is="community" data="{{item}}" wx:for="{{communitys}}"/>
+    <view class="tips">
+      <view wx:if="{{hasMore}}"><image src="/image/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text></view>
+      <view wx:else><text>已经显示全部</text></view>
+    </view>
+  </scroll-view>
+  <loading hidden="{{!loading}}">加载中...</loading>
+</template>
+
+<template name="community">
+   <View class="communityItem" bindtap="bindAddressTap" id="{{item.id}}">
+      <View class="nameText">
+        <image class="homeImage" mode="aspectFit" src="/image/address.png"></image>
+        <Text>{{item.name}}</Text>
+      </View>
+    <View class="addressText"> {{item.address}} </View>
+  </View>
+</template>

@@ -1,14 +1,16 @@
 /**index.wxss**/
 .head {
   display: flex;
-  height: 10%;
+  height: 6%;
   flex-direction: row;
   align-items: center;
   background-color: #FFFFFF;
 }
 
 .picker{
+  display: flex;
   padding-left: 10px;
+  flex-direction: row;
 }
 
 .headtext{

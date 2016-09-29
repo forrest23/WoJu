@@ -5,28 +5,36 @@
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#35495e",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "蜗居",
-    "navigationBarTextStyle": "black"
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/wechat.png",
-        "selectedIconPath": "image/wechatHL.png",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home-actived.png",
         "text": "主页"
       },
       {
         "pagePath": "pages/logs/logs",
-        "iconPath": "image/wechat.png",
-        "selectedIconPath": "image/wechatHL.png",
-        "text": "接口"
+        "iconPath": "image/safari.png",
+        "selectedIconPath": "image/safari-actived.png",
+        "text": "邻居"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "image/profile.png",
+        "selectedIconPath": "image/profile-actived.png",
+        "text": "我的"
       }
     ]
   },

@@ -6,3 +6,45 @@
   box-sizing: border-box;
   background-color: #E8E8E8;
 } 
+
+.page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+
+.tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.tips image,
+.tips text {
+  vertical-align: middle;
+}
+
+.communityItem{
+  background-color: #FFFFFF;
+  border-bottom:1px #aaa solid;
+  padding: 10px;
+}
+
+.communityItem .nameText{
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.communityItem .addressText{
+  font-size: 16px;
+}

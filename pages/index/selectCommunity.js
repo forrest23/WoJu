@@ -1,64 +1,102 @@
 var app = getApp();
 var requester = app.globalData.requester;
-Page({
+Page( {
     data: {
-        array: ['上海', '南京', '浙江', '安微'],
+        citys: [ '上海', '南京', '浙江', '安微' ],
         index: 0,
-        src: '../../image/arrowdown.png',
-        homeSrc: '../../image/home.png',
-        movies: [],
+        selectCity: '',
+        page: 0,
+        size: 10,
+        communitys: [],
         loading: false,
+        hasMore: false,
+        where: '{}',
+        search: ''
     },
-    bindAddressTap: function (e) {
+
+    bindAddressTap: function( e ) {
         var id = e.currentTarget.id;
-        for (var key in this.data.movies) {
-            if (this.data.movies[key].id == id) {
-                app.globalData.communityName = this.data.movies[key].name;
+        for( var key in this.data.communitys ) {
+            if( this.data.communitys[ key ].id == id ) {
+                app.globalData.communityName = this.data.communitys[ key ].name;
+                wx.setStorage( {
+                    key: "communityName",
+                    data: this.data.communitys[ key ].name
+                });
                 wx.navigateBack();
             }
         }
     },
-    search: function (e) {
-        var where = '{}';
-        if (e.detail.value) where = '{"name": {"like": "' + e.detail.value + '"}}';
+    search: function( e ) {
+        var where = '{"city": "' + this.data.selectCity + '"}';
+        if( e.detail.value ) {
+            where = '{"and": [{"city": "' + this.data.selectCity + '"}, {"name": {"like": "' + e.detail.value + '"}}]}';
+        }
 
-        this.setData({ loading: true })
+        this.setData( { loading: true, hasMore: true, where: where, search: e.detail.value, page: 0 });
 
-        requester.getCommunity('community', 0, 10, where)
-            .then(d => {
-                this.setData({ movies: d, loading: false })
+        this.getCommunity( where );
+    },
+
+    loadMore() {
+        console.log( 'loadMore' );
+        if( !this.data.hasMore ) return;
+
+        this.setData( { loading: true });
+        requester.getCommunity( 'community', ( this.data.page++ ) * this.data.size, this.data.size, this.data.where )
+            .then( d => {
+                if( d.length ) {
+                    this.setData( { communitys: this.data.communitys.concat( d ), loading: false })
+                } else {
+                    this.setData( { hasMore: false, loading: false })
+                }
             })
-            .catch(e => {
-                console.error(e)
-                this.setData({ movies: [], loading: false })
+            .catch( e => {
+                this.setData( { subtitle: '获取数据异常', loading: false })
+                console.error( e )
             })
     },
-    bindPickerChange: function (e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value);
-        this.setData({
+
+    bindPickerChange: function( e ) {
+        var where = '{"city": "' + this.data.citys[ e.detail.value ] + '"}';
+        if( this.data.search && this.data.search.length > 0 ) {
+            where = '{"and": [{"city": "' + this.data.citys[ e.detail.value ] + '"}, {"name": {"like": "' + this.data.search + '"}}]}';
+        }
+        this.setData( {
             index: e.detail.value,
-            loading: true
-        })
+            selectCity: this.data.citys[ e.detail.value ],
+            loading: true,
+            hasMore: true,
+            where: where,
+            page: 0
+        });
 
-        var where = '{"city": "' + this.data.array[e.detail.value] + '"}';
-        requester.getCommunity('community', 0, 10, where)
-            .then(d => {
-                this.setData({ movies: d, loading: false })
-            })
-            .catch(e => {
-                console.error(e)
-                this.setData({ movies: [], loading: false })
-            })
+        this.getCommunity( where );
     },
-    onLoad: function () {
-        var where = '{"city": "' + this.data.array[0] + '"}';
-        requester.getCommunity('community', 0, 10, where)
-            .then(d => {
-                this.setData({ movies: d, loading: false })
+
+    onLoad: function() {
+        var where = '{"city": "' + this.data.citys[ 0 ] + '"}';
+        this.setData( {
+            selectCity: this.data.citys[ 0 ],
+            where: where,
+            loading: true,
+            hasMore: true
+        });
+        this.getCommunity( where );
+    },
+
+    getCommunity: function( where ) {
+        requester.getCommunity( 'community', ( this.data.page++ ) * this.data.size, this.data.size, where )
+            .then( d => {
+                if( d.length ) {
+                    this.setData( { communitys: d, loading: false })
+                } else {
+                    this.setData( { hasMore: false, loading: false })
+                }
             })
-            .catch(e => {
-                console.error(e)
-                this.setData({ movies: [], loading: false })
+            .catch( e => {
+                console.error( e )
+                this.setData( { communitys: [], loading: false, hasMore: false })
             })
     }
 })

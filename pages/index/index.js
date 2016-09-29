@@ -13,8 +13,16 @@ Page( {
   },
   onLoad: function() {
     console.log( 'onLoad' );
+    var value = wx.getStorageSync( 'communityName' );
+    if( value ) {
+      this.setData( {
+        text: value
+      });
+      app.globalData.communityName = value;
+    }
   },
   onShow: function() {
+    console.log( 'onShow' );
     if( this.data.text != app.globalData.communityName ) {
       this.setData( {
         text: app.globalData.communityName
