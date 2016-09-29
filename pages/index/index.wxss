@@ -2,18 +2,16 @@
 .head {
   display: flex;
   height: 80rpx;
-  width: 100%;
   flex-direction: row;
-  align-items: center;
   background-color: #FFFFFF;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.cityHead
+{
+  flex:4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .picker{
@@ -29,4 +27,20 @@
   width: 20px; 
   height: 20px;
   padding-left: 5px;
+}
+
+.addHead
+{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.plusimage
+{
+   width: 30px; 
+   height: 30px;
+   margin-right: 10px;
 }

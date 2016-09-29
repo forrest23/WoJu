@@ -1,7 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="head" bindtap="tapHead">
-    <text class="headtext">{{text}}</text>
-    <image class="headimage" mode="aspectFit" src="{{src}}"></image>
+  <view class="head">
+    <View class="cityHead" bindtap="tapHead">
+      <text class="headtext">{{text}}</text>
+      <image class="headimage" mode="aspectFit" src="../../image/arrowdown.png"></image>
+    </View>
+    <View class="addHead" bindtap="tapAdd">
+      <image class="plusimage" src="../../image/plus-actived.png"></image>
+    </View>
   </view>
+
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block wx:for="{{actionSheetItems}}">
+      <action-sheet-item class="item" bindtap="bindItemTap" data-name="{{item}}">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
 </view>
