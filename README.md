@@ -4,7 +4,16 @@
 使用的是无APPID开发。
 
 已开发：    
-1.选择小区界面（从接口获取小区数据、列表渲染、列表点击事件、搜索功能）
+1.选择小区界面  
 
-![image](https://github.com/forrest23/WoJu/blob/master/screenshots/selectCommunity.png)
+包括以下的组件和API使用：  
+1.1  input 搜索框
+1.2  ​picker 城市选择
+1.3  ​loading 列表加载loading​
+1.4  icon 搜索图标
+1.5  列表渲染、模板  加载小区列表
+1.6  网络请求API wx.request
+1.7  本地存储 wx.setStorage
+
+![image](http://image18-c.poco.cn/mypoco/myphoto/20160929/15/18343359920160929152717072.gif?480x863_110)
 
