@@ -25,6 +25,25 @@ Page({
   },
 
   bindItemTap: function (e) {
+    var itemName = e.currentTarget.dataset.name;
+    switch (itemName) {
+      case '服务':
+        wx.navigateTo({
+          url: '../add/addService'
+        })
+        break;
+      case '新鲜事':
+        wx.navigateTo({
+          url: '../add/addTrends'
+        })
+        break;
+      default:
+        break;
+    }
+
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    })
     console.log('tap ' + e.currentTarget.dataset.name)
   },
 

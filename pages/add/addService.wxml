@@ -1,0 +1,34 @@
+<View class="container">
+	<View class="titleInputView">
+		<input placeholder="标题" bindchange="search" maxlength="40" class="titleInput" />
+	</View>
+	<View class="descInputView">
+		<input placeholder="描述你的服务，清晰的描述有助于达成交易" type="number" bindchange="search" class="titleInput" />
+	</View>
+	<View class="imageView">
+		<image class="plusImage" mode="aspectFit" src="../../image/plus.png"></image>
+	</View>
+	<View class="priceView">
+		<input placeholder="请输入服务的单价（元）" bindchange="search" maxlength="40" class="titleInput" />
+	</View>
+	<View class="priceView">
+		<picker bindchange="bindPickerChange" value="{{index}}" range="{{citys}}">
+			<view class="picker">
+				服务类型：{{citys[index]}}
+				<image class="pickImage" mode="aspectFit" src="../../image/arrowdown.png"></image>
+			</view>
+		</picker>
+	</View>
+	<View class="priceView">
+		<View class="paddingLeft">服务范围：</View>
+		<radio-group class="radio-group" bindchange="radioChange">
+			<label class="radio" wx:for="{{items}}" class="paddingLeft">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+		</radio-group>
+	</View>
+	<View class="buttonView">
+		<button class="button marginRight" type="primary">预览</button>
+		<button class="button" type="warn">发布</button>
+	</View>
+</View>

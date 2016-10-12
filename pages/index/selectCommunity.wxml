@@ -4,7 +4,7 @@
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{citys}}">
         <view class="picker">
             当前城市：{{citys[index]}}
-            <image class="headimage" mode="aspectFit" src="../../image/arrowdown.png"></image>
+            <image class="pickImage" mode="aspectFit" src="../../image/arrowdown.png"></image>
         </view>
      </picker>
   </view>

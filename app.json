@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/index/selectCommunity",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/add/addTrends",
+    "pages/add/addService"
   ],
   "window": {
     "navigationBarBackgroundColor": "#35495e",
