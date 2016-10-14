@@ -1,0 +1,54 @@
+<view class="container">
+	<view bindtap="bindViewTap" class="userinfo">
+		<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		<view class="marginBottom">
+			<text class="userinfo-sign">无证程序员</text>
+		</view>
+	</view>
+
+	<view class="userDetailInfo">
+		<view class="row">
+			<view class="left">性别</view>
+			<view class="middle">男</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<view class="left">家乡</view>
+			<view class="middle">江苏镇江</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<view class="left">年龄层</view>
+			<view class="middle">80后</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<view class="left">职业</view>
+			<view class="middle">IT互联网</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<view class="left">情感状态</view>
+			<view class="middle">保密</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+		<view class="row">
+			<view class="left">我的范儿</view>
+			<view class="middle">保密</view>
+			<view class="right">
+				<image class="imageRight" src="../../image/arrowright2.png"></image>
+			</view>
+		</view>
+	</view>
+</view>

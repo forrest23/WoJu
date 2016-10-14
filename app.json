@@ -4,7 +4,9 @@
     "pages/index/selectCommunity",
     "pages/logs/logs",
     "pages/add/addTrends",
-    "pages/add/addService"
+    "pages/add/addService",
+    "pages/me/me",
+    "pages/neighbor/neighbor"
   ],
   "window": {
     "navigationBarBackgroundColor": "#35495e",
@@ -27,13 +29,13 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/neighbor/neighbor",
         "iconPath": "image/safari.png",
         "selectedIconPath": "image/safari-actived.png",
         "text": "邻居"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/me/me",
         "iconPath": "image/profile.png",
         "selectedIconPath": "image/profile-actived.png",
         "text": "我的"

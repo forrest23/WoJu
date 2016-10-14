@@ -1,0 +1,66 @@
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.userinfo-avatar {
+  width: 198rpx;
+  height: 198rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  
+}
+
+.userinfo-sign {
+    margin-top: 10rpx;
+    color: #aaa;
+}
+
+.userDetailInfo {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border-bottom:1rpx #aaa solid;
+}
+
+.left {
+    flex: 2;
+    margin: 20rpx;
+    color: #aaa;
+}
+
+.middle {
+     flex: 3;
+     margin: 20rpx;
+}
+
+.right {
+     flex: 1;
+     margin: 10rpx;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     align-items: center;
+}
+
+.marginBottom{
+    margin-bottom: 15rpx;
+    margin-top: 10rpx;
+}
+
+.imageRight{
+    width: 28rpx;
+    height: 47rpx;
+    margin-right: 10rpx;
+}
